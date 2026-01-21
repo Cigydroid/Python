@@ -3,4 +3,38 @@ Jana 1985-05-20
 Pavel 2001-12-10
 Lucie 1978-03-08
 Martin 1995-07-25
-Matìj 1995-11-06
+Matï¿½j 1995-11-06
+  @property
+  def jmeno(self):
+    return self.__jmeno
+  @jmeno.setter
+  def jmeno(self, jmeno):
+    self.__jmeno = jmeno.upper()
+
+  @property
+  def prijmeni(self):
+    return self.__prijmeni
+  @prijmeni.setter
+  def prijmeni(self, prijmeni):
+    self.__prijmeni = prijmeni.upper()
+    
+  @property
+  def telefon(self):
+    return self.__telefon
+  @telefon.setter
+  def telefon(self, telefon):
+    self.__telefon = telefon.upper()
+
+  @property
+  def telefon(self):
+    return self.__telefon
+  @telefon.setter
+  def telefon(self, telefon):
+    self.__telefon = telefon.upper()
+
+  @property
+  def telefon(self):
+    return self.__telefon
+  @telefon.setter
+  def telefon(self, telefon):
+    self.__telefon = telefon.upper()
