@@ -1,12 +1,15 @@
 #game settings
 WIDTH = 500
 HEIGHT = 800
+#game settings
+WIDTH = 500
+HEIGHT = 800
 FPS = 30
 
 #player settings
 PLAYER_WIDTH = 50
 PLAYER_HEIGHT = 50
-PLAYER_SPEED = 5
+PLAYER_SPEED = 10
 PLAYER_IMAGE_PATH = "obrazky/spaceship.png"
 
 #colors

@@ -1,6 +1,6 @@
 import pygame
 from settings import *
-from Block import *
+from Python.Pygame.uhybani.Block import *
 from Player import *
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
