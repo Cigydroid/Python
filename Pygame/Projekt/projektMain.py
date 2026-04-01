@@ -126,11 +126,11 @@ while True:
         if power_block.rect.y > HEIGHT:
             power_block.reset(-300)
 
-        # power timer
+        # konec power-upu
         if power_active and current_time - power_timer > 5000:
             power_active = None
 
-        # draw
+        # vykreslení
         screen.fill((0,0,0))
 
         player.draw(screen)

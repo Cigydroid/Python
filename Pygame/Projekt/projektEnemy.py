@@ -1,57 +1,22 @@
 import pygame
+import random
 from projektSettings import *
 
 class FallingBlock:
-    def __init__(self):
-        self.rect = pygame.Rect(180, 350, PLAYER_SIZE, PLAYER_SIZE)
+    def __init__(self, y_start=0):
+        self.rect = pygame.Rect(
+            random.randint(0, WIDTH - BLOCK_SIZE),
+            y_start,
+            BLOCK_SIZE,
+            BLOCK_SIZE
+        )
 
-        self.dashing = False
-        self.dash_distance = 0
-        self.last_dash_time = -DASH_COOLDOWN
+    def reset(self, y_start=0):
+        self.rect.y = y_start
+        self.rect.x = random.randint(0, WIDTH - BLOCK_SIZE)
 
-    def move(self, keys, current_time, power_active):
-        move_speed = 5
-        if power_active == "speed":
-            move_speed = 8
+    def update(self, speed):
+        self.rect.y += speed
 
-        moving_left = keys[pygame.K_LEFT]
-        moving_right = keys[pygame.K_RIGHT]
-
-        # DASH START
-        if keys[pygame.K_SPACE] and not self.dashing:
-            if current_time - self.last_dash_time >= DASH_COOLDOWN:
-                if moving_left or moving_right:
-                    self.dashing = True
-                    self.dash_distance = 0
-                    self.last_dash_time = current_time
-
-        # DASH
-        if self.dashing:
-            if keys[pygame.K_SPACE]:
-                move = 0
-                if moving_left:
-                    move = -DASH_SPEED
-                elif moving_right:
-                    move = DASH_SPEED
-
-                self.rect.x += move
-                self.dash_distance += abs(move)
-
-                if self.dash_distance >= WIDTH // 2:
-                    self.dashing = False
-            else:
-                self.dashing = False
-        else:
-            if moving_left and self.rect.left > 0:
-                self.rect.x -= move_speed
-            if moving_right and self.rect.right < WIDTH:
-                self.rect.x += move_speed
-
-        # okraje
-        if self.rect.left < 0:
-            self.rect.left = 0
-        if self.rect.right > WIDTH:
-            self.rect.right = WIDTH
-
-    def draw(self, screen):
-        pygame.draw.rect(screen, (0,255,0), self.rect)
+    def draw(self, screen, color):
+        pygame.draw.rect(screen, color, self.rect)
