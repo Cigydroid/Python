@@ -12,9 +12,21 @@ player = Player()
 player_group = pygame.sprite.Group()
 player_group.add(player)
 
-enemy = Enemy(50,25)
 enemy_group =pygame.sprite.Group()
-enemy_group.add(enemy)
+def create_enemies():
+    x = 50  
+    y = 25
+    for i in range(2):
+        for j in range(10):
+            enemy = Enemy(x,y)
+            enemy_group.add(enemy)
+            x += 50 
+        y += 50
+        x = 50
+create_enemies()
+    
+
+
 
 running = True
 while running:
@@ -30,3 +42,4 @@ while running:
     enemy_group.draw(screen)
     pygame.display.flip()
 pygame.quit()
+
