@@ -14,8 +14,8 @@ class Player:
         if power_active == "speed":
             move_speed = 8
 
-        moving_left = keys[pygame.K_LEFT]
-        moving_right = keys[pygame.K_RIGHT]
+        moving_left = keys[pygame.K_a]
+        moving_right = keys[pygame.K_d]
 
         # DASH START
         if keys[pygame.K_SPACE] and not self.dashing:

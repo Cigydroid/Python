@@ -3,7 +3,7 @@ from settings import *
 import random
 
 class Block(pygame.sprite.Sprite):
-    def __init__(self, speed):   # 🔥 přidáš parametr
+    def __init__(self, speed):   
         super().__init__()
 
         x = random.randrange(0 + (BLOCK_WIDTH // 2), WIDTH - (BLOCK_WIDTH // 2))
@@ -14,7 +14,7 @@ class Block(pygame.sprite.Sprite):
 
         self.rect = self.image.get_rect(bottom=y, centerx=x)
 
-        self.speed = speed   # 🔥 použiješ speed z mainu
+        self.speed = speed  
 
     def update(self):
         self.rect.y += self.speed
