@@ -18,3 +18,6 @@ ENEMY_SPEED = 2
 ENEMY_DROP_SPEED = 10
 ENEMY_BULLET_IMAGE_PATH = "obrazky/alien_bullet.png"
 ENEMY_BULLET_SPEED = 4
+
+EXPLOSION_IMAGE_PATH = "obrazky/exp{}.png"
+EXPLOSION_ANIMATION_SPEED = 3  # Tady si můžeš nastavit, jak rychle výbuch proběhne
