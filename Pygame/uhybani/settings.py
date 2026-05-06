@@ -12,7 +12,7 @@ PLAYER_HEIGHT = 50
 PLAYER_SPEED = 10
 PLAYER_IMAGE_PATH = "obrazky/spaceship.png"
 
-#colors
+#colors 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 ORANGE = (255, 165, 0)
