@@ -2,7 +2,7 @@ import pygame
 import settings
 import random as rand
 class Bullet(pygame.sprite.Sprite):
-    def __ini__(self,x,y,kdo_vystrelil = "alien"):
+    def __init__(self,x,y,kdo_vystrelil = "alien"):
         super().__init__()
         self.kdo_vystrelil = kdo_vystrelil
         if kdo_vystrelil == "alien":
@@ -20,5 +20,3 @@ class Bullet(pygame.sprite.Sprite):
         if self.rect.bottom < 0 or self.rect.top > settings.SCREEN_HEIGHT:
             self.kill()
 
-if __name__ == "__main__":
-    import main

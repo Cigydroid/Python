@@ -12,26 +12,18 @@ class Enemy(pygame.sprite.Sprite):
         self.direction = 1
         self.counter_for_direction = -175
     def update(self): 
-        if self.direction == 1:
-            self.rect.move_ip(self.speed,0)
-            self.counter_for_direction += 1
-        else:
-            self.rect.move_ip(-self.speed,0)
-            self.counter_for_direction -= 1
-        if self.counter_for_direction % 175 == 0 and self.counter_for_direction != 0:
-            self.direction *= -1
-            self.rect.move_ip(0,settings.ENEMY_DROP_SPEED)
-
+        self.rect.x += self.speed * self.direction
         self._check_borders()
 
     def _check_borders(self):
         if self.rect.right > settings.SCREEN_WIDTH - 50:
-            self.counter_for_direction = 100
             self.direction = -1
+            self.rect.y += settings.ENEMY_DROP_SPEED
+            self.rect.right = settings.SCREEN_WIDTH - 51
         elif self.rect.left < 50:
-            self.counter_for_direction = -100
             self.direction = 1
             self.rect.y += settings.ENEMY_DROP_SPEED
+            self.rect.left = 51
         
 
 if __name__ == "__main__":
